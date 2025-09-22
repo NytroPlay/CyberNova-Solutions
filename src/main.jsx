@@ -1,4 +1,4 @@
-// src/main.jsx
+// src/main.jsx - VERSIÓN CORREGIDA ✅
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"; 
@@ -7,7 +7,7 @@ import "./styles/styles.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/CyberNova-Solutions/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
