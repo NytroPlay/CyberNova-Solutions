@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   // El "base" debe ser el nombre EXACTO de tu repositorio
-  base: "/CyberNova Solutions/",
+  base: "/CyberNova-Solutions/",
 });
