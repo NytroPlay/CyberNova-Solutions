@@ -1,7 +1,7 @@
 // src/lib/storage.js
 import initial from "../data/services.json";
 
-const KEY = "cybernova_services";
+const KEY = "CyberNova-Solutions";
 
 /**
  * Inicializa los servicios si aún no existe nada en localStorage.
