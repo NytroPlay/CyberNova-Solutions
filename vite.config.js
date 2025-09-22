@@ -1,8 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// 👇 Ajusta la base con el nombre EXACTO de tu repo en GitHub
+// 👇 Asegúrate de que el nombre coincida EXACTAMENTE con el nombre del repositorio en GitHub
 export default defineConfig({
   plugins: [react()],
-  base: '/CyberNova-Solutions/'
-})
+  base: '/MyFirstUnity/', // ← Cambia esto si el nombre del repo es diferente
+});
+

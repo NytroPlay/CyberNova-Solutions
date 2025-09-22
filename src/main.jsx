@@ -1,12 +1,16 @@
-// src/main.jsx - VERSIÓN CORREGIDA ✅
+// src/main.jsx - VERSIÓN FINAL CORREGIDA ✅
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom"; 
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./styles/styles.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
+
