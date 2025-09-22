@@ -1,8 +1,8 @@
+// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// 👇 Ajusta la base al nombre exacto de tu repo
 export default defineConfig({
   plugins: [react()],
-  base: "/CyberNova-Solutions/",
+  base: "/CyberNova-Solutions/", // 👈 importante: debe coincidir con el nombre del repo
 });
