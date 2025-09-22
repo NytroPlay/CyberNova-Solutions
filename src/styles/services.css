@@ -1,0 +1,127 @@
+/* src/styles/services.css */
+
+.services-page {
+  padding: 40px 20px;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.services-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.create-btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.create-btn:hover {
+  background: #e56700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-image {
+  width: 100%;
+  height: 160px;
+  background: #f4f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.service-body {
+  padding: 18px;
+  flex: 1;
+}
+
+.service-body h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.service-body .price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.service-body p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.service-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 18px 18px;
+}
+
+.service-actions .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.service-actions .btn.edit {
+  background: #5b21b6; /* morado */
+  color: #fff;
+  border: none;
+}
+
+.service-actions .btn.edit:hover {
+  background: #4c1d95;
+}
+
+.service-actions .btn.delete {
+  background: #dc2626; /* rojo */
+  color: #fff;
+  border: none;
+}
+
+.service-actions .btn.delete:hover {
+  background: #b91c1c;
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "name": "Desarrollo Web",
+    "price": 1300000,
+    "stock": 12,
+    "promo": true,
+    "description": "Sitios web responsivos optimizados.",
+    "duration": "A convenir",
+    "mode": "Remota",
+    "tags": ["Frontend", "Backend", "FullStack"]
+  },
+  {
+    "id": "2",
+    "name": "Apps",
+    "price": 1500000,
+    "stock": 8,
+    "promo": false,
+    "description": "Aplicaciones móviles multiplataforma.",
+    "duration": "3-5 meses",
+    "mode": "Remota",
+    "tags": ["iOS", "Android", "React Native"]
+  },
+  {
+    "id": "3",
+    "name": "Cloud",
+    "price": 1000000,
+    "stock": 15,
+    "promo": false,
+    "description": "Migración y optimización en la nube.",
+    "duration": "2-4 semanas",
+    "mode": "Híbrida",
+    "tags": ["AWS", "Azure", "Google Cloud"]
+  },
+  {
+    "id": "4",
+    "name": "Consultoría",
+    "price": 300000,
+    "stock": 20,
+    "promo": false,
+    "description": "Asesorías técnicas especializadas.",
+    "duration": "Por hora",
+    "mode": "Remota",
+    "tags": ["IT", "Estrategia", "Asesoría"]
+  },
+  {
+    "id": "5",
+    "name": "Ciberseguridad",
+    "price": 1300000,
+    "stock": 12,
+    "promo": true,
+    "description": "Pruebas, auditorías y hardening.",
+    "duration": "1-2 meses",
+    "mode": "Remota",
+    "tags": ["Pentesting", "Auditoría", "Hardening"]
+  },
+  {
+    "id": "6",
+    "name": "Datos",
+    "price": 1100000,
+    "stock": 10,
+    "promo": false,
+    "description": "ETL, dashboards y analítica.",
+    "duration": "1-3 meses",
+    "mode": "Remota",
+    "tags": ["ETL", "BI", "Dashboards"]
+  },
+  {
+    "id": "7",
+    "name": "Redes y Conectividad",
+    "price": 1400000,
+    "stock": 7,
+    "promo": false,
+    "description": "Diseño e implementación de redes seguras y conectividad empresarial.",
+    "duration": "2-6 semanas",
+    "mode": "Presencial",
+    "tags": ["LAN", "WAN", "Seguridad de red"]
+  },
+  {
+    "id": "8",
+    "name": "Soporte y Mantenimiento",
+    "price": 800000,
+    "stock": 30,
+    "promo": false,
+    "description": "Mesa de ayuda, mantenimiento preventivo y correctivo.",
+    "duration": "Mensual",
+    "mode": "Híbrida",
+    "tags": ["Helpdesk", "Soporte TI", "Correctivo"]
+  },
+  {
+    "id": "9",
+    "name": "Automatización",
+    "price": 2100000,
+    "stock": 5,
+    "promo": false,
+    "description": "RPA y orquestación de procesos.",
+    "duration": "2-4 meses",
+    "mode": "Remota",
+    "tags": ["RPA", "DevOps", "Automatización"]
+  },
+  {
+    "id": "10",
+    "name": "UX/UI",
+    "price": 1200000,
+    "stock": 9,
+    "promo": false,
+    "description": "Investigación y diseño de interfaces.",
+    "duration": "1-2 meses",
+    "mode": "Remota",
+    "tags": ["Diseño UX", "UI", "Prototipado"]
+  },
+  {
+    "id": "11",
+    "name": "Marketing Digital",
+    "price": 900000,
+    "stock": 18,
+    "promo": false,
+    "description": "SEO, campañas digitales y gestión de redes sociales.",
+    "duration": "Mensual",
+    "mode": "Remota",
+    "tags": ["SEO", "SEM", "Redes Sociales"]
+  },
+  {
+    "id": "12",
+    "name": "IA y Chatbots",
+    "price": 2500000,
+    "stock": 6,
+    "promo": true,
+    "description": "Desarrollo de chatbots e IA para automatizar procesos y atención al cliente.",
+    "duration": "2-3 meses",
+    "mode": "Remota",
+    "tags": ["IA", "Chatbots", "Automatización"]
+  }
+]
