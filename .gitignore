@@ -7,12 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencias
 node_modules
+
+# Carpetas de build que no se usan
 dist
 dist-ssr
+
+# ⚠️ Importante: NO ignores docs/ porque ahí va el build para GitHub Pages
+# docs
+
+# Archivos locales
 *.local
 
-# Editor directories and files
+# Archivos de editor
 .vscode/*
 !.vscode/extensions.json
 .idea
