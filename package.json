@@ -4,13 +4,12 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build --outDir docs",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "git add docs && git commit -m \"deploy: publicar docs en GitHub Pages\" && git push origin master"
-}
-,
+    "dev": "vite",
+    "build": "vite build --outDir docs",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "npm run predeploy && git add docs vite.config.js && git commit -m \"deploy: publicar build en docs para GitHub Pages\" || echo \"Sin cambios en docs\" && git push origin master"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
