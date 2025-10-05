@@ -14,14 +14,21 @@ export default function Navbar() {
     navigate("/login");
   }
 
+  // Cerrar menú cuando se hace clic en un enlace
+  function handleLinkClick() {
+    setMenuOpen(false);
+  }
+
   return (
     <nav className="nav">
       <div className="container inner">
-        <div className="brand">CyberNova Solutions</div>
+        <div className="brand" onClick={() => navigate("/")}>
+          CyberNova Solutions
+        </div>
 
-        {/* Botón Hamburguesa */}
+        {/* Botón hamburguesa */}
         <button
-          className={`hamburger ${menuOpen ? "active" : ""}`}
+          className={`menu-toggle ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
@@ -30,24 +37,30 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        {/* Menú principal */}
+        {/* Enlaces del menú */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" onClick={() => setMenuOpen(false)} className={pathname === "/" ? "active" : ""}>
+            <Link
+              to="/"
+              className={pathname === "/" ? "active" : ""}
+              onClick={handleLinkClick}
+            >
               Inicio
             </Link>
           </li>
           <li>
             <Link
               to="/servicios"
-              onClick={() => setMenuOpen(false)}
               className={pathname.startsWith("/servicios") ? "active" : ""}
+              onClick={handleLinkClick}
             >
               Servicios
             </Link>
           </li>
           <li>
-            <a href="/#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+            <a href="/#contacto" onClick={handleLinkClick}>
+              Contacto
+            </a>
           </li>
 
           {isLoggedIn ? (
@@ -55,8 +68,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/admin/servicios"
-                  onClick={() => setMenuOpen(false)}
                   className={pathname.startsWith("/admin") ? "active" : ""}
+                  onClick={handleLinkClick}
                 >
                   Admin
                 </Link>
@@ -67,7 +80,7 @@ export default function Navbar() {
                     handleLogout();
                     setMenuOpen(false);
                   }}
-                  className="login-btn logout-btn"
+                  className="logout-btn"
                 >
                   Cerrar sesión
                 </button>
@@ -75,7 +88,7 @@ export default function Navbar() {
             </>
           ) : (
             <li>
-              <Link to="/login" onClick={() => setMenuOpen(false)} className="login-btn">
+              <Link to="/login" className="login-btn" onClick={handleLinkClick}>
                 Admin
               </Link>
             </li>
