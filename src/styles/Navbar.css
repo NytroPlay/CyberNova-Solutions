@@ -5,6 +5,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+  transition: background 0.3s ease;
 }
 
 .nav .inner {
@@ -12,13 +14,18 @@
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .brand {
   font-weight: 800;
   font-size: 1rem;
+  cursor: pointer;
 }
 
+/* ======= Enlaces ======= */
 .nav-links {
   display: flex;
   align-items: center;
@@ -33,20 +40,24 @@
   text-decoration: none;
   font-weight: 600;
   opacity: 0.9;
+  transition: opacity 0.3s;
 }
 
 .nav a:hover,
 .nav a.active {
   opacity: 1;
+  border-bottom: 2px solid #ff8c00;
+  padding-bottom: 2px;
 }
 
-/* Botón de login */
+/* ======= Botones ======= */
 .login-btn {
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.35);
   background: rgba(255,255,255,.08);
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .logout-btn {
@@ -54,7 +65,12 @@
   border: 1px solid rgba(255,0,0,0.4);
 }
 
-/* ======= Hamburguesa (solo visible en móvil) ======= */
+.login-btn:hover {
+  background: #ff8c00;
+  border-color: #ff8c00;
+}
+
+/* ======= Hamburguesa (solo móvil) ======= */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -65,6 +81,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 101;
 }
 
 .hamburger span {
@@ -96,18 +113,33 @@
     top: 64px;
     left: 0;
     right: 0;
-    background: var(--purple);
+    background: rgba(75, 0, 130, 0.98);
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    padding: 20px 0;
+    padding: 25px 0;
     border-top: 1px solid rgba(255,255,255,0.15);
-    display: none;
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease;
   }
 
   .nav-links.open {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
     animation: fadeIn 0.3s ease;
+  }
+
+  .nav-links a {
+    font-size: 17px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    width: 80%;
+    text-align: center;
   }
 
   @keyframes fadeIn {
