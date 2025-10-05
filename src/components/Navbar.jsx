@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-//import "./Navbar.css";
+import "../styles/navbar.css";
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -17,14 +17,11 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="container inner">
-        {/* Marca */}
-        <div className="brand" onClick={() => navigate("/")}>
-          CyberNova <span>Solutions</span>
-        </div>
+        <div className="brand">CyberNova Solutions</div>
 
-        {/* Botón hamburguesa */}
+        {/* Botón Hamburguesa */}
         <button
-          className={`menu-toggle ${menuOpen ? "active" : ""}`}
+          className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
@@ -33,26 +30,24 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        {/* Enlaces */}
+        {/* Menú principal */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" className={pathname === "/" ? "active" : ""} onClick={() => setMenuOpen(false)}>
+            <Link to="/" onClick={() => setMenuOpen(false)} className={pathname === "/" ? "active" : ""}>
               Inicio
             </Link>
           </li>
           <li>
             <Link
               to="/servicios"
-              className={pathname.startsWith("/servicios") ? "active" : ""}
               onClick={() => setMenuOpen(false)}
+              className={pathname.startsWith("/servicios") ? "active" : ""}
             >
               Servicios
             </Link>
           </li>
           <li>
-            <a href="/#contacto" onClick={() => setMenuOpen(false)}>
-              Contacto
-            </a>
+            <a href="/#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
           </li>
 
           {isLoggedIn ? (
@@ -60,8 +55,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/admin/servicios"
-                  className={pathname.startsWith("/admin") ? "active" : ""}
                   onClick={() => setMenuOpen(false)}
+                  className={pathname.startsWith("/admin") ? "active" : ""}
                 >
                   Admin
                 </Link>
@@ -72,7 +67,7 @@ export default function Navbar() {
                     handleLogout();
                     setMenuOpen(false);
                   }}
-                  className="logout-btn"
+                  className="login-btn logout-btn"
                 >
                   Cerrar sesión
                 </button>
@@ -80,7 +75,7 @@ export default function Navbar() {
             </>
           ) : (
             <li>
-              <Link to="/login" className="login-btn" onClick={() => setMenuOpen(false)}>
+              <Link to="/login" onClick={() => setMenuOpen(false)} className="login-btn">
                 Admin
               </Link>
             </li>
