@@ -1,11 +1,13 @@
-// src/components/Navbar.jsx
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+//import "./Navbar.css";
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const isLoggedIn = !!localStorage.getItem("cybernova_token"); // ✅ detectamos si hay sesión
+  const isLoggedIn = !!localStorage.getItem("cybernova_token");
 
   function handleLogout() {
     localStorage.removeItem("cybernova_token");
@@ -15,10 +17,26 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="container inner">
-        <div className="brand">CyberNova Solutions</div>
-        <ul>
+        {/* Marca */}
+        <div className="brand" onClick={() => navigate("/")}>
+          CyberNova <span>Solutions</span>
+        </div>
+
+        {/* Botón hamburguesa */}
+        <button
+          className={`menu-toggle ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Enlaces */}
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" className={pathname === "/" ? "active" : ""}>
+            <Link to="/" className={pathname === "/" ? "active" : ""} onClick={() => setMenuOpen(false)}>
               Inicio
             </Link>
           </li>
@@ -26,12 +44,15 @@ export default function Navbar() {
             <Link
               to="/servicios"
               className={pathname.startsWith("/servicios") ? "active" : ""}
+              onClick={() => setMenuOpen(false)}
             >
               Servicios
             </Link>
           </li>
           <li>
-            <a href="/#contacto">Contacto</a>
+            <a href="/#contacto" onClick={() => setMenuOpen(false)}>
+              Contacto
+            </a>
           </li>
 
           {isLoggedIn ? (
@@ -40,15 +61,18 @@ export default function Navbar() {
                 <Link
                   to="/admin/servicios"
                   className={pathname.startsWith("/admin") ? "active" : ""}
+                  onClick={() => setMenuOpen(false)}
                 >
                   Admin
                 </Link>
               </li>
               <li>
                 <button
-                  onClick={handleLogout}
-                  className="login-btn"
-                  style={{ cursor: "pointer", background: "transparent", border: "none", color: "#fff" }}
+                  onClick={() => {
+                    handleLogout();
+                    setMenuOpen(false);
+                  }}
+                  className="logout-btn"
                 >
                   Cerrar sesión
                 </button>
@@ -56,7 +80,7 @@ export default function Navbar() {
             </>
           ) : (
             <li>
-              <Link to="/login" className="login-btn">
+              <Link to="/login" className="login-btn" onClick={() => setMenuOpen(false)}>
                 Admin
               </Link>
             </li>

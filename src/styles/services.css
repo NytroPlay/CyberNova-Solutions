@@ -1,5 +1,4 @@
-/* src/styles/services.css */
-
+/* --- VISTA GENERAL DE SERVICIOS --- */
 .services-page {
   padding: 40px 20px;
   background: var(--bg);
@@ -124,4 +123,125 @@
 
 .service-actions .btn.delete:hover {
   background: #b91c1c;
+}
+
+/* --- VISTA DETALLE DE SERVICIO --- */
+.service-detail {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f8f9fc;
+  min-height: 70vh;
+}
+
+.service-card-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: center;
+}
+
+.service-image-detail {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.service-image-detail img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 250px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+.service-info {
+  flex: 1 1 400px;
+}
+
+.service-info h2 {
+  color: #4b0082;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.promo {
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tags {
+  margin: 15px 0;
+}
+
+.tag {
+  background-color: #e7dbff;
+  color: #4b0082;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 8px;
+  font-size: 0.85rem;
+}
+
+.btn-quote {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-quote:hover {
+  background-color: #5e1ea3;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #4b0082;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .service-card-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-image-detail img {
+    max-width: 90%;
+  }
 }

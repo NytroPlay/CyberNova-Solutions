@@ -1,5 +1,5 @@
 // src/App.jsx
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -11,10 +11,20 @@ import AdminForm from "./pages/AdminForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
+  const location = useLocation();
+  const hideFooterRoutes = []; // rutas donde no se mostrará footer (si luego necesitas)
+  const isDetailPage = location.pathname.startsWith("/servicios/");
+
   return (
     <>
       <Navbar />
-      <main>
+      <main
+        style={{
+          minHeight: "calc(100vh - 160px)", // asegura que el footer quede abajo
+          backgroundColor: "#f7f9fb",
+          paddingBottom: isDetailPage ? "40px" : "0",
+        }}
+      >
         <Routes>
           {/* Sitio público */}
           <Route path="/" element={<Home />} />
@@ -49,7 +59,7 @@ export default function App() {
           />
         </Routes>
       </main>
-      <Footer />
+      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
     </>
   );
 }

@@ -1,0 +1,131 @@
+.service-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px 100px;
+  background: #f7f9fb;
+}
+
+.service-card-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 1000px;
+  width: 100%;
+  align-items: center;
+}
+
+.service-img-box {
+  flex: 1;
+  background: #f3f3f3;
+  border-radius: 12px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.service-info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-title {
+  font-size: 2rem;
+  color: #1f1f1f;
+  margin: 0;
+}
+
+.service-price {
+  font-size: 1.4rem;
+  color: #5b21b6;
+  font-weight: 700;
+}
+.service-price span {
+  font-size: 1rem;
+  color: #555;
+  margin-left: 6px;
+}
+
+.badge-stock {
+  background: #ede9fe;
+  color: #4c1d95;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.service-description {
+  color: #444;
+  font-size: 1rem;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.tag {
+  background: #ede9fe;
+  color: #4c1d95;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-detail {
+  background: #f97316;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: fit-content;
+}
+.btn-detail:hover {
+  background: #ea580c;
+}
+
+.back-link {
+  margin-top: 14px;
+}
+.back-link a {
+  color: #5b21b6;
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .service-card-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+  .service-img-box {
+    width: 100%;
+  }
+  .service-info-box {
+    align-items: center;
+  }
+}
