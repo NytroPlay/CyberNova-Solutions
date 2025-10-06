@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+// src/components/ServiceCard.jsx
+import React from "react";
+import "../styles/styles.css";
 
-export default function ServiceCard({ s }) {
-  const money = s.price.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+export default function ServiceCard({ title, description, image }) {
   return (
-    <Link to={`/servicios/${s.id}`} className="card" style={{ display:"block", textDecoration:"none", color:"inherit" }}>
-      <h3>{s.name}</h3>
-      <div className="price">{money} COP</div>
-    </Link>
+    <div className="service-card">
+      <img src={image} alt={title} className="service-image" />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
   );
 }
