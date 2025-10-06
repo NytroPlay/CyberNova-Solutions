@@ -1,22 +1,18 @@
-# CyberNova Solutions – Front-End
+# CyberNova Solutions – Catálogo & Admin (Front-End)
 
+Aplicación Front-end para venta de servicios tecnológicos (Catálogo público + Panel Admin con CRUD).  
+Stack: React + Vite, React Router, CSS modular. Persistencia: localStorage con seed desde JSON.
 
-- Stack: React + Vite + HTML/CSS/JS.
-- Rutas: Home, /servicios, /servicios/:id, /login, /admin/servicios, /admin/servicios/:id.
-- Datos: services.json + localStorage (simula BD/CRUD).
-- Login demo: **admin / 1234**.
+## 🚀 Demo
+- Producción: **TODO_URL_PROD**
+- Repo: **TODO_URL_REPO**
 
+## 📦 Requisitos
+- Node 18+ y npm
 
-## Local
+## ▶️ Scripts
+```bash
 npm i
-npm run dev
-
-
-## Build
-npm run build
-
-
-## Deploy (GitHub Pages)
-1. Ajusta `base` en `vite.config.js` al nombre del repo.
-2. Publica la carpeta `dist/` en la rama `gh-pages`.
-3. Activa Pages: Settings → Pages → Branch `gh-pages`.
+npm run dev    # entorno local
+npm run build  # build producción
+npm run preview
