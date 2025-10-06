@@ -22,12 +22,11 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="container inner">
-        {/* Marca */}
         <div className="brand" onClick={() => navigate("/")}>
           CyberNova Solutions
         </div>
 
-        {/* Botón hamburguesa (solo móvil) */}
+        {/* Botón hamburguesa */}
         <button
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -38,7 +37,7 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        {/* Enlaces del menú */}
+        {/* Menú */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
             <Link
