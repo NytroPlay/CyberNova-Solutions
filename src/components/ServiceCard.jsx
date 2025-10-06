@@ -1,13 +1,23 @@
-// src/components/ServiceCard.jsx
 import React from "react";
-import "../styles/styles.css";
+import "./ServiceCard.css";
 
-export default function ServiceCard({ title, description, image }) {
+const ServiceCard = ({ title, description, image }) => {
   return (
-    <div className="service-card">
-      <img src={image} alt={title} className="service-image" />
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className="service-card-modern">
+      <div className="image-container">
+        {image ? (
+          <img src={image} alt={title} className="service-image" />
+        ) : (
+          <div className="no-image">Sin imagen</div>
+        )}
+      </div>
+
+      <div className="service-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
     </div>
   );
-}
+};
+
+export default ServiceCard;
