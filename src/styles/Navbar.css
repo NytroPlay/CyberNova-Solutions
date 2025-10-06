@@ -72,12 +72,12 @@
 
 /* ======= Icono Hamburguesa ======= */
 .hamburger {
-  display: none; /* 🔒 Oculto por defecto (solo se activa en móvil) */
+  display: none; /* 🔸 Oculto por defecto en escritorio */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 28px;
-  height: 22px;
+  width: 30px;
+  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
@@ -89,7 +89,7 @@
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #ff8c00; /* Color visible */
+  background: #ff8c00;
   border-radius: 3px;
   margin: 4px 0;
   transition: all 0.3s ease;
@@ -110,7 +110,7 @@
 /* ======= Menú Responsive ======= */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* ✅ Solo visible en móvil */
+    display: flex; /* 🔸 Visible solo en móviles */
   }
 
   .nav-links {
@@ -148,18 +148,18 @@
   }
 }
 
-/* ======= En escritorio (forzar ocultar hamburguesa) ======= */
+/* ======= Modo escritorio (forzado) ======= */
 @media (min-width: 769px) {
   .hamburger {
-    display: none !important; /* 🚀 Forzado a ocultarse */
+    display: none !important; /* ✅ Oculta el ícono siempre en pantallas grandes */
   }
 
   .nav-links {
-    display: flex !important; /* Asegura menú visible */
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    position: static !important;
-    background: transparent !important;
+    display: flex !important;
+    position: static;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
   }
 }
