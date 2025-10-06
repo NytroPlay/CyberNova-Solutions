@@ -1,4 +1,5 @@
 // src/pages/ServiceDetail.jsx
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getById } from "../lib/storage";
 import { serviceImages } from "../data/serviceImages"; // ✅ importar imágenes
@@ -7,6 +8,10 @@ import "../styles/serviceDetail.css";
 export default function ServiceDetail() {
   const { id } = useParams();
   const s = getById(id);
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
+  const [success, setSuccess] = useState(false);
+
   if (!s) return <div className="container">Servicio no encontrado.</div>;
 
   const money = s.price.toLocaleString("es-CO", {
@@ -16,6 +21,21 @@ export default function ServiceDetail() {
 
   // ✅ Obtener imagen asociada
   const imageSrc = serviceImages[s.name] || null;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+      setShowModal(false);
+      setFormData({ nombre: "", email: "", mensaje: "" });
+    }, 2000);
+  };
 
   return (
     <div className="service-detail-container">
@@ -59,13 +79,63 @@ export default function ServiceDetail() {
             </div>
           )}
 
-          <button className="btn-detail">Solicitar cotización</button>
+          {/* Botón para abrir modal */}
+          <button className="btn-detail" onClick={() => setShowModal(true)}>
+            Solicitar cotización
+          </button>
 
           <div className="back-link">
             <Link to="/servicios">← Volver al catálogo</Link>
           </div>
         </div>
       </div>
+
+      {/* 🔹 MODAL FORMULARIO */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>Solicitar cotización</h3>
+            {!success ? (
+              <form onSubmit={handleSubmit}>
+                <label>Nombre completo</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  required
+                />
+
+                <label>Correo electrónico</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+
+                <label>Mensaje</label>
+                <textarea
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  placeholder={`Estoy interesado en el servicio: ${s.name}`}
+                  required
+                ></textarea>
+
+                <button type="submit" className="btn-enviar">
+                  Enviar solicitud
+                </button>
+              </form>
+            ) : (
+              <div className="success-message">
+                ✅ ¡Solicitud enviada con éxito!
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

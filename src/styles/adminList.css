@@ -1,139 +1,155 @@
-/* src/styles/adminList.css */
-
-/* 🔹 Contenedor general */
+/* 🎯 CONTENEDOR GENERAL */
 .services-page {
-  padding: 32px;
-  background-color: #f8f9fc;
+  padding: 48px 5%;
+  background-color: #f9fafc;
   min-height: 100vh;
 }
 
-/* 🔹 Encabezado */
+/* 🔹 ENCABEZADO */
 .services-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .services-header h2 {
-  font-size: 1.8rem;
-  color: #1a1a1a;
+  font-size: 1.9rem;
+  color: #1f1f33;
+  font-weight: 700;
 }
 
 .create-btn {
-  background: #ff6600;
+  background: #f97316;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
+  border-radius: 10px;
+  padding: 12px 22px;
   font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
 
 .create-btn:hover {
-  background: #e05500;
+  background: #ea580c;
+  transform: scale(1.05);
 }
 
-/* 🔹 Grid de servicios */
+/* 🔹 GRID DE SERVICIOS */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: stretch;
 }
 
-/* 🔹 Tarjeta del servicio */
+/* 🔹 TARJETA DEL SERVICIO */
 .service-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* 🔹 Imagen del servicio */
+/* 🔹 IMAGEN DEL SERVICIO */
 .service-image {
-  background: #f3f3f3;
-  height: 180px;
+  background: #f4f6fb;
+  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-bottom: 1px solid #eee;
 }
 
 .service-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 12px;
+  padding: 14px;
   transition: transform 0.3s ease;
 }
 
 .service-card:hover .service-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .no-image {
-  color: #aaa;
+  color: #bbb;
   font-style: italic;
   font-size: 0.9rem;
 }
 
-/* 🔹 Cuerpo de la tarjeta */
+/* 🔹 CUERPO DE LA TARJETA */
 .service-body {
-  padding: 16px;
+  padding: 20px 22px;
   flex-grow: 1;
+  text-align: center;
 }
 
 .service-body h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #1f1f33;
   margin-bottom: 8px;
 }
 
 .price {
   font-weight: 700;
   color: #6a1b9a;
-  margin-bottom: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .price small {
   color: #666;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  margin-left: 4px;
 }
 
-.service-body .desc {
+.service-body p {
   color: #555;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 6px 0;
 }
 
-/* 🔹 Botones de acción */
+/* 🔹 ACCIONES */
 .service-actions {
   display: flex;
-  justify-content: space-between;
-  padding: 12px 16px 16px;
+  justify-content: space-around;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fafafa;
   border-top: 1px solid #eee;
 }
 
 .btn {
+  flex: 1;
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 8px 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
+/* Botón Editar */
 .btn.edit {
   background: #6a1b9a;
   color: #fff;
@@ -144,21 +160,27 @@
   transform: scale(1.05);
 }
 
+/* Botón Eliminar */
 .btn.delete {
   background: #d32f2f;
   color: #fff;
 }
 
 .btn.delete:hover {
-  background: #9a0007;
+  background: #b71c1c;
   transform: scale(1.05);
 }
 
-/* 🔹 Responsividad */
+/* 🔹 RESPONSIVIDAD */
+@media (max-width: 992px) {
+  .services-grid {
+    gap: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .services-header {
     flex-direction: column;
-    gap: 16px;
     align-items: flex-start;
   }
 
