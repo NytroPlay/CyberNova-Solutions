@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/Navbar.css";
 
-
 export default function Navbar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -16,7 +15,6 @@ export default function Navbar() {
     navigate("/login");
   }
 
-  // Cerrar menú cuando se hace clic en un enlace
   function handleLinkClick() {
     setMenuOpen(false);
   }
@@ -24,13 +22,14 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="container inner">
+        {/* Marca */}
         <div className="brand" onClick={() => navigate("/")}>
           CyberNova Solutions
         </div>
 
-        {/* Botón hamburguesa */}
+        {/* Botón hamburguesa (solo móvil) */}
         <button
-          className={`menu-toggle ${menuOpen ? "active" : ""}`}
+          className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >

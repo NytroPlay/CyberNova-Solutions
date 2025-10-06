@@ -72,7 +72,7 @@
 
 /* ======= Icono Hamburguesa ======= */
 .hamburger {
-  display: none; /* 🔸 Oculto por defecto en escritorio */
+  display: none; /* 🔸 Por defecto oculto */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -82,7 +82,6 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: auto;
   z-index: 101;
 }
 
@@ -110,7 +109,7 @@
 /* ======= Menú Responsive ======= */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* 🔸 Visible solo en móviles */
+    display: flex !important; /* ✅ Solo visible en móvil */
   }
 
   .nav-links {
@@ -148,18 +147,22 @@
   }
 }
 
-/* ======= Modo escritorio (forzado) ======= */
+/* ======= Desktop Fix ======= */
 @media (min-width: 769px) {
   .hamburger {
-    display: none !important; /* ✅ Oculta el ícono siempre en pantallas grandes */
+    display: none !important; /* ✅ Oculto totalmente en escritorio */
   }
 
   .nav-links {
     display: flex !important;
     position: static;
-    background: transparent;
     transform: none;
     opacity: 1;
     pointer-events: all;
+    background: transparent;
+    flex-direction: row;
+    gap: 22px;
+    padding: 0;
+    border: none;
   }
 }
