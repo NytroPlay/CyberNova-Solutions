@@ -11,7 +11,6 @@ const ServiceCard = ({ title, description, image }) => {
           <div className="no-image">Sin imagen</div>
         )}
       </div>
-
       <div className="service-content">
         <h3>{title}</h3>
         <p>{description}</p>

@@ -1,25 +1,128 @@
 /* src/styles/adminList.css */
 
-.actions-top {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: flex-end;
+/* 🔹 Contenedor general */
+.services-page {
+  padding: 32px;
+  background-color: #f8f9fc;
+  min-height: 100vh;
 }
 
-.admin-mode {
-  border: 2px solid #eee;
+/* 🔹 Encabezado */
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.services-header h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.create-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.create-btn:hover {
+  background: #e05500;
+}
+
+/* 🔹 Grid de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* 🔹 Tarjeta del servicio */
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.admin-mode:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.admin-buttons {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 🔹 Imagen del servicio */
+.service-image {
+  background: #f3f3f3;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.04);
+}
+
+.no-image {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* 🔹 Cuerpo de la tarjeta */
+.service-body {
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.service-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: 700;
+  color: #6a1b9a;
+  margin-bottom: 8px;
+}
+
+.price small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.service-body .desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Botones de acción */
+.service-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #eee;
 }
 
 .btn {
@@ -28,7 +131,7 @@
   padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .btn.edit {
@@ -38,6 +141,7 @@
 
 .btn.edit:hover {
   background: #4a0072;
+  transform: scale(1.05);
 }
 
 .btn.delete {
@@ -47,4 +151,24 @@
 
 .btn.delete:hover {
   background: #9a0007;
+  transform: scale(1.05);
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 768px) {
+  .services-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .service-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }

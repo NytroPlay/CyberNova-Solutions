@@ -1,7 +1,8 @@
 // src/pages/ServiceDetail.jsx
 import { useParams, Link } from "react-router-dom";
 import { getById } from "../lib/storage";
-import "../styles/serviceDetail.css"; // nuevo archivo de estilos
+import { serviceImages } from "../data/serviceImages"; // ✅ importar imágenes
+import "../styles/serviceDetail.css";
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -13,11 +14,18 @@ export default function ServiceDetail() {
     currency: "COP",
   });
 
+  // ✅ Obtener imagen asociada
+  const imageSrc = serviceImages[s.name] || null;
+
   return (
     <div className="service-detail-container">
       <div className="service-card-detail">
         <div className="service-img-box">
-          <span className="no-img">Sin imagen</span>
+          {imageSrc ? (
+            <img src={imageSrc} alt={s.name} className="service-image" />
+          ) : (
+            <span className="no-img">Sin imagen</span>
+          )}
         </div>
 
         <div className="service-info-box">
