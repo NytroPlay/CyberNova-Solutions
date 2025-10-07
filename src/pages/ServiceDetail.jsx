@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getById } from "../lib/storage";
-import { serviceImages } from "../data/serviceImages"; // ✅ importar imágenes
+import { serviceImages } from "../data/serviceImages";
 import "../styles/serviceDetail.css";
 
 export default function ServiceDetail() {
@@ -24,7 +24,6 @@ export default function ServiceDetail() {
     currency: "COP",
   });
 
-  // ✅ Obtener imagen asociada
   const imageSrc = serviceImages[s.name] || null;
 
   const handleChange = (e) => {
@@ -50,8 +49,8 @@ export default function ServiceDetail() {
             <img
               src={imageSrc}
               alt={s.name}
+              loading="lazy"
               className="service-image"
-              loading="lazy" // ✅ carga optimizada
             />
           ) : (
             <span className="no-img">Sin imagen</span>
@@ -63,8 +62,6 @@ export default function ServiceDetail() {
           <p className="service-price">
             {money} <span>desde</span>
           </p>
-
-          {s.stock && <div className="badge-stock">Stock: {s.stock}</div>}
 
           <p className="service-description">{s.description}</p>
 
@@ -89,7 +86,6 @@ export default function ServiceDetail() {
             </div>
           )}
 
-          {/* Botón para abrir modal */}
           <button className="btn-detail" onClick={() => setShowModal(true)}>
             Solicitar cotización
           </button>
@@ -100,7 +96,6 @@ export default function ServiceDetail() {
         </div>
       </div>
 
-      {/* 🔹 MODAL FORMULARIO */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
