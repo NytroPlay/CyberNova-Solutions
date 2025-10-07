@@ -1,5 +1,5 @@
 // src/pages/ServiceDetail.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getById } from "../lib/storage";
 import { serviceImages } from "../data/serviceImages"; // ✅ importar imágenes
@@ -11,6 +11,11 @@ export default function ServiceDetail() {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
   const [success, setSuccess] = useState(false);
+
+  // ✅ Forzar scroll al inicio al cargar el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!s) return <div className="container">Servicio no encontrado.</div>;
 
@@ -42,7 +47,12 @@ export default function ServiceDetail() {
       <div className="service-card-detail">
         <div className="service-img-box">
           {imageSrc ? (
-            <img src={imageSrc} alt={s.name} className="service-image" />
+            <img
+              src={imageSrc}
+              alt={s.name}
+              className="service-image"
+              loading="lazy" // ✅ carga optimizada
+            />
           ) : (
             <span className="no-img">Sin imagen</span>
           )}
