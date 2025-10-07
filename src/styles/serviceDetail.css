@@ -266,3 +266,47 @@
     padding: 0.35rem 0.7rem;
   }
 }
+
+/* ======== CENTRADO DE BOTONES EN MÓVIL ======== */
+@media (max-width: 768px) {
+  .service-info-box {
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-detail {
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    justify-content: center;
+    margin: 1rem auto 0 auto;
+    display: block;
+  }
+
+  .back-link {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .back-link a {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 Reduce el alto del contenedor en móvil para mostrar todo sin scroll */
+  .service-card-detail {
+    padding: 1.2rem;
+    max-width: 500px;
+  }
+
+  /* 🔹 Ajuste de la imagen */
+  .service-img-box {
+    max-height: 200px;
+  }
+
+  .service-img-box img {
+    object-fit: contain;
+    height: auto;
+  }
+}
