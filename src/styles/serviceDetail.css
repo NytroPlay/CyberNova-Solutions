@@ -105,12 +105,13 @@
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 0.7rem 1.5rem;
+  padding: 0.9rem 1.8rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   width: fit-content;
   transition: background 0.3s ease, transform 0.2s ease;
+  animation: fadeSlideIn 0.6s ease forwards, pulseShadow 2.5s infinite ease-in-out;
 }
 
 .btn-detail:hover {
@@ -120,6 +121,7 @@
 
 .back-link {
   margin-top: 1rem;
+  text-align: center;
 }
 
 .back-link a {
@@ -223,6 +225,31 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* 🔸 Animación de entrada suave */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔸 Sombra pulsante para el botón */
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 0 0 0px rgba(249, 115, 22, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(249, 115, 22, 0.5);
+  }
+}
+
 /* ======== RESPONSIVIDAD Y CENTRADO EN MÓVIL ======== */
 @media (max-width: 768px) {
   .service-detail-container {
@@ -279,7 +306,6 @@
     width: 90%;
     max-width: 320px;
     margin-top: 1rem;
-    background: #f97316;
     border-radius: 10px;
     padding: 0.9rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
